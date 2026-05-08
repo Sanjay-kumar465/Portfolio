@@ -2,15 +2,36 @@ import { motion } from "framer-motion";
 
 const INTERNSHIPS = [
   {
+    company: "Aparajitha Corporate Services Private Limited",
+    role: "Agentic AI & Machine Learning Intern",
+    duration: "May 2026 – June 2026",
+    location: "India",
+    employmentType: "Internship",
+    logo: "https://www.aparajitha.com/wp-content/uploads/2022/10/aparajitha-logo.png",
+    highlight: "Worked on enterprise-grade AI compliance, policy intelligence, and automated risk analysis systems.",
+    description: [
+      "Worked on Agentic AI systems for intelligent compliance automation and policy analysis.",
+      "Developed and improved ML-powered risk prediction and compliance decisioning pipelines.",
+      "Built AI workflows integrating LLM reasoning, rule engines, and structured validation systems.",
+      "Assisted in developing enterprise AI solutions for policy violation detection and audit automation.",
+      "Improved model accuracy by implementing deterministic reasoning, confidence gating, and evidence-based validation.",
+      "Collaborated with engineering teams to optimize backend APIs and AI inference workflows.",
+      "Contributed to prompt engineering, semantic analysis, and compliance intelligence systems."
+    ],
+    technologies: ["Python", "FastAPI", "Machine Learning", "LLMs", "Agentic AI", "NLP", "Vector Databases", "REST APIs", "Docker", "Git", "Prompt Engineering"]
+  },
+  {
     company: "NoviTech R&D Pvt Ltd",
     role: "AI & ML Intern (Online)",
     duration: "Jul 2025 – Aug 2025 (1 Month)",
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQHqTkvOVMz78g/company-logo_200_200/company-logo_200_200/0/1696061229436/novitechresearchanddevelopment_logo?e=2147483647&v=beta&t=TbN4GWIzEoUFigqJnG1n1GQ_mwKm2X16pveA-hDAjKw",
     description: "Completed hands-on AI & ML internship. Worked on data preprocessing, feature engineering, and model training using Python and Scikit-learn. Applied supervised learning algorithms including classification and regression models. Gained exposure to real-world AI/ML workflows and industry best practices."
   },
   {
     company: "Pinnacle Labs",
     role: "Data Science Intern (Virtual)",
     duration: "Jul 11, 2025 – Aug 10, 2025 (4 Weeks)",
+    logo: "https://media.licdn.com/dms/image/v2/D560BAQHXY0KWawdf-Q/company-logo_200_200/company-logo_200_200/0/1695059567198?e=2147483647&v=beta&t=Vr5KpRXI0IqpyDvk2dPLb93bqESlVnkSBK5oITdPqOk",
     description: "Completed 4-week virtual internship in Data Science with commendable performance. Worked on data science tasks and projects, demonstrating exceptional dedication and skill. Credential ID: PL/2025/JULP5/217"
   }
 ];
@@ -104,12 +125,68 @@ export default function Experience() {
                 {/* Timeline Dot */}
                 <div className="absolute left-[-5px] top-2 w-[10px] h-[10px] bg-accent rounded-full border-4 border-background" />
                 
-                <span className="font-mono text-accent text-sm mb-2 block">{exp.duration}</span>
-                <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
-                <p className="text-accent font-medium mb-4">{exp.company}</p>
-                <p className="text-secondary-text max-w-2xl leading-relaxed">
-                  {exp.description}
-                </p>
+                <div className="flex flex-col md:flex-row md:items-start gap-6 group">
+                  {exp.logo && (
+                    <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.company} logo`} 
+                        className="w-16 h-16 rounded-lg object-contain bg-white/5 p-2 border border-white/10 glass-effect"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
+                      <span className="font-mono text-accent text-sm">{exp.duration}</span>
+                      {exp.employmentType && (
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full border border-accent/30 text-accent/80 uppercase tracking-wider">
+                          {exp.employmentType}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-accent transition-colors duration-300">
+                      {exp.role}
+                    </h3>
+                    <p className="text-accent font-medium mb-4 flex items-center gap-2">
+                      {exp.company}
+                      {exp.location && <span className="text-white/40 text-xs font-normal">• {exp.location}</span>}
+                    </p>
+                    
+                    {exp.highlight && (
+                      <p className="text-white/80 italic mb-4 text-sm border-l-2 border-accent/30 pl-4 py-1 bg-accent/5 rounded-r-lg">
+                        "{exp.highlight}"
+                      </p>
+                    )}
+
+                    {Array.isArray(exp.description) ? (
+                      <ul className="space-y-3 mb-6">
+                        {exp.description.map((item, idx) => (
+                          <li key={idx} className="text-secondary-text text-sm flex gap-3 leading-relaxed">
+                            <span className="text-accent mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent/60" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-secondary-text max-w-2xl leading-relaxed mb-6">
+                        {exp.description}
+                      </p>
+                    )}
+
+                    {exp.technologies && (
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {exp.technologies.map((tech, idx) => (
+                          <span 
+                            key={idx} 
+                            className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-white/70 hover:border-accent/50 hover:text-accent transition-all duration-300 cursor-default"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -46,19 +46,19 @@ const pageVariants = {
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
 const slideInLeft = {
   hidden: { opacity: 0, x: -40 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
@@ -79,7 +79,7 @@ export default function About() {
         <h2 className="section-title">About Me</h2>
 
         {/* Bio Block */}
-        <motion.div 
+        <motion.div
           variants={fadeUpVariants}
           initial="hidden"
           whileInView="visible"
@@ -89,9 +89,9 @@ export default function About() {
           {/* Left: Photo */}
           <div className="group relative">
             <div className="aspect-square w-full max-w-[400px] border border-accent overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(250,204,21,0.2)]">
-              <img 
-                src="/profile.png" 
-                alt="Sanjay S" 
+              <img
+                src="/profile.png"
+                alt="Sanjay S"
                 className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
               />
             </div>
@@ -114,11 +114,11 @@ export default function About() {
         <span className="font-mono text-accent text-sm tracking-[0.3em] uppercase mb-12 block">
           // SKILLS
         </span>
-        
+
         <div className="space-y-12">
           {skillCategories.map((category, catIndex) => (
-            <motion.div 
-              key={catIndex} 
+            <motion.div
+              key={catIndex}
               variants={fadeUpVariants}
               initial="hidden"
               whileInView="visible"
@@ -149,7 +149,7 @@ export default function About() {
         <span className="font-mono text-accent text-sm tracking-[0.3em] uppercase mb-12 block">
           // EXPERIENCE & EDUCATION
         </span>
-        
+
         <div className="relative border-l border-accent/30 ml-2 md:ml-4 pl-8 md:pl-12 space-y-16">
           {timeline.map((item, index) => (
             <motion.div
@@ -162,7 +162,7 @@ export default function About() {
             >
               {/* Dot on the line */}
               <div className="absolute left-[-41px] md:left-[-57px] top-2 w-[16px] h-[16px] bg-accent rounded-full border-4 border-background" />
-              
+
               <span className="font-mono text-accent text-sm mb-2 block">{item.year}</span>
               <h3 className="text-2xl font-bold mb-1">{item.title}</h3>
               {item.institution && (

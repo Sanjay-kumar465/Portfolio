@@ -43,6 +43,20 @@ const CERTIFICATES = [
     date: "Feb 2026",
     id: "—",
     file: "cit.pdf"
+  },
+  {
+    name: "Origin Hackathon — Participation",
+    issuer: "Saveetha Institute of Medical and Technical Sciences",
+    date: "Apr 11, 2026",
+    id: "—",
+    file: "origin.pdf"
+  },
+  {
+    name: "Yuktha Hackathon (Track 3) — Certificate of Participation",
+    issuer: "PSG Institute of Technology and Applied Research (YUKTHA 2K26)",
+    date: "2026",
+    id: "—",
+    file: "yuktha.pdf"
   }
 ];
 
