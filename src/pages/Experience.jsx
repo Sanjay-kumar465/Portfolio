@@ -7,7 +7,7 @@ const INTERNSHIPS = [
     duration: "May 2026 – June 2026",
     location: "India",
     employmentType: "Internship",
-    logo: "https://www.aparajitha.com/wp-content/uploads/2022/10/aparajitha-logo.png",
+    logo: "https://yt3.googleusercontent.com/ytc/AIdro_nL7iI2vG0f4Y0JqZ0g6V8j5P5J5J5J5J5J5J5J=s160-c-k-c0x00ffffff-no-rj",
     highlight: "Worked on enterprise-grade AI compliance, policy intelligence, and automated risk analysis systems.",
     description: [
       "Worked on Agentic AI systems for intelligent compliance automation and policy analysis.",
