@@ -28,7 +28,7 @@ const timeline = [
     year: "2024 – 2028",
     title: "B.E. Computer Science and Engineering",
     institution: "Sri Krishna College of Engineering and Technology, Coimbatore",
-    description: "Currently Pursuing — 2nd Year | GPA: 8.22 (Till 3rd Sem)"
+    description: "Currently Pursuing — 3rd Year | GPA: 8.3 (Till 4th Sem)"
   },
   {
     year: "2024 – PRESENT",

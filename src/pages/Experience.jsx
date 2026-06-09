@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const INTERNSHIPS = [
   {
-    company: "Aparajitha Corporate Services Private Limited",
+    company: "Aparajitha Corporate Services Private Limited (ON-SITE)",
     role: "Agentic AI & Machine Learning Intern",
     duration: "May 2026 – June 2026",
     location: "India",
@@ -67,16 +67,16 @@ const pageVariants = {
 
 const slideInLeft = {
   hidden: { opacity: 0, x: -40 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
 const timelineLine = {
   hidden: { scaleY: 0 },
-  visible: { 
+  visible: {
     scaleY: 1,
     transition: { duration: 1.5, ease: "easeInOut" }
   }
@@ -103,7 +103,7 @@ export default function Experience() {
         </span>
         <div className="relative ml-4 py-4">
           {/* Animated Line */}
-          <motion.div 
+          <motion.div
             variants={timelineLine}
             initial="hidden"
             whileInView="visible"
@@ -124,13 +124,13 @@ export default function Experience() {
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-[-5px] top-2 w-[10px] h-[10px] bg-accent rounded-full border-4 border-background" />
-                
+
                 <div className="flex flex-col md:flex-row md:items-start gap-6 group">
                   {exp.logo && (
                     <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                      <img 
-                        src={exp.logo} 
-                        alt={`${exp.company} logo`} 
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
                         className="w-16 h-16 rounded-lg object-contain bg-white/5 p-2 border border-white/10 glass-effect"
                       />
                     </div>
@@ -151,7 +151,7 @@ export default function Experience() {
                       {exp.company}
                       {exp.location && <span className="text-white/40 text-xs font-normal">• {exp.location}</span>}
                     </p>
-                    
+
                     {exp.highlight && (
                       <p className="text-white/80 italic mb-4 text-sm border-l-2 border-accent/30 pl-4 py-1 bg-accent/5 rounded-r-lg">
                         "{exp.highlight}"
@@ -176,8 +176,8 @@ export default function Experience() {
                     {exp.technologies && (
                       <div className="flex flex-wrap gap-2 mt-4">
                         {exp.technologies.map((tech, idx) => (
-                          <span 
-                            key={idx} 
+                          <span
+                            key={idx}
                             className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-white/70 hover:border-accent/50 hover:text-accent transition-all duration-300 cursor-default"
                           >
                             {tech}
@@ -199,7 +199,7 @@ export default function Experience() {
           // HACKATHONS
         </span>
         <div className="relative ml-4 py-4">
-          <motion.div 
+          <motion.div
             variants={timelineLine}
             initial="hidden"
             whileInView="visible"
@@ -219,7 +219,7 @@ export default function Experience() {
                 className="relative pl-12"
               >
                 <div className="absolute left-[-5px] top-2 w-[10px] h-[10px] bg-accent rounded-full border-4 border-background" />
-                
+
                 <span className="font-mono text-accent text-sm mb-2 block">{hack.duration}</span>
                 <h3 className="text-2xl font-bold text-white mb-1">{hack.name}</h3>
                 <p className="text-accent font-medium mb-1">{hack.organiser}</p>
