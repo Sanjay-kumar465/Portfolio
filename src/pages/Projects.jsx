@@ -74,15 +74,6 @@ const PROJECTS = [
     tech: ["JavaScript", "HTML/CSS"],
     github: "https://github.com/Sanjay-kumar465/Event-management",
     demo: "#"
-  },
-  {
-    id: "09",
-    name: "Portfolio GKS",
-    category: "Frontend",
-    description: "A dynamic personal portfolio website with a modern design.",
-    tech: ["JavaScript", "HTML/CSS"],
-    github: "https://github.com/Sanjay-kumar465/Portfolio_GKS",
-    demo: "https://portfolio-gks.vercel.app"
   }
 ];
 
