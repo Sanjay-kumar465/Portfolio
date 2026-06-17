@@ -47,6 +47,42 @@ const PROJECTS = [
     tech: ["Python", "ML", "NLP"],
     github: "https://github.com/Sanjay-kumar465/FakeNewsDetection",
     demo: "#"
+  },
+  {
+    id: "06",
+    name: "Predicate Engine",
+    category: "Full Stack",
+    description: "A Python-based engine for evaluating predicates and rules with a web interface.",
+    tech: ["Python", "JavaScript", "HTML/CSS"],
+    github: "https://github.com/Sanjay-kumar465/Predicate-Engine",
+    demo: "#"
+  },
+  {
+    id: "07",
+    name: "Sentiment Scope",
+    category: "Frontend",
+    description: "A web application for performing sentiment analysis on text data.",
+    tech: ["JavaScript", "HTML/CSS"],
+    github: "https://github.com/Sanjay-kumar465/Sentiment-Scope",
+    demo: "#"
+  },
+  {
+    id: "08",
+    name: "Event Management",
+    category: "Frontend",
+    description: "An event management platform with an interactive user interface.",
+    tech: ["JavaScript", "HTML/CSS"],
+    github: "https://github.com/Sanjay-kumar465/Event-management",
+    demo: "#"
+  },
+  {
+    id: "09",
+    name: "Portfolio GKS",
+    category: "Frontend",
+    description: "A dynamic personal portfolio website with a modern design.",
+    tech: ["JavaScript", "HTML/CSS"],
+    github: "https://github.com/Sanjay-kumar465/Portfolio_GKS",
+    demo: "https://portfolio-gks.vercel.app"
   }
 ];
 
