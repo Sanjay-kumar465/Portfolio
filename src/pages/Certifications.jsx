@@ -57,6 +57,27 @@ const CERTIFICATES = [
     date: "2026",
     id: "—",
     file: "yuktha.pdf"
+  },
+  {
+    name: "Claude Platform 101",
+    issuer: "Anthropic",
+    date: "2026",
+    id: "—",
+    file: "Claude Platform 101.pdf"
+  },
+  {
+    name: "Claude Code 101",
+    issuer: "Anthropic",
+    date: "2026",
+    id: "—",
+    file: "Claude Code 101.pdf"
+  },
+  {
+    name: "Claude 101",
+    issuer: "Anthropic",
+    date: "2026",
+    id: "—",
+    file: "Claude 101.pdf"
   }
 ];
 
