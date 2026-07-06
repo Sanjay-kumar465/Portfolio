@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { Mail, MapPin, Loader2, Send } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram, FaPhone } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import emailjs from 'emailjs-com';
 
 const pageVariants = {
@@ -72,6 +73,12 @@ export default function Contact() {
       link: "https://www.instagram.com/sanjay__kumar465/",
       hoverColor: "hover:text-[#E1306C]",
       glow: "hover:drop-shadow-[0_0_10px_rgba(225,48,108,0.8)]"
+    },
+    {
+      icon: FaXTwitter,
+      link: "https://x.com/Sanjaykumar6673",
+      hoverColor: "hover:text-[#ffffff]",
+      glow: "hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
     }
   ];
 

@@ -5,6 +5,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const roles = ["Full Stack Developer", "AI & ML Engineer", "Open Source Builder", "Web Developer ", "Data Engineer "];
 
@@ -51,6 +52,12 @@ export default function Home() {
       link: "https://www.instagram.com/sanjay__kumar465/",
       hoverColor: "hover:text-[#E1306C]",
       glow: "hover:drop-shadow-[0_0_10px_rgba(225,48,108,0.8)]"
+    },
+    {
+      icon: FaXTwitter,
+      link: "https://x.com/Sanjaykumar6673",
+      hoverColor: "hover:text-[#ffffff]",
+      glow: "hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
     }
   ];
 

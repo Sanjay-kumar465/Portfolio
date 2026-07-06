@@ -6,6 +6,7 @@ import { CustomCursor } from "./CustomCursor";
 import ScrollIndicator from "./ScrollIndicator";
 
 import { FaGithub, FaLinkedin, FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export const Layout = () => {
   const { scrollYProgress } = useScroll();
@@ -36,6 +37,12 @@ export const Layout = () => {
       link: "https://www.instagram.com/sanjay__kumar465/",
       hoverColor: "hover:text-[#E1306C]",
       glow: "hover:drop-shadow-[0_0_10px_rgba(225,48,108,0.8)]"
+    },
+    { 
+      icon: FaXTwitter, 
+      link: "https://x.com/Sanjaykumar6673",
+      hoverColor: "hover:text-[#ffffff]",
+      glow: "hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]"
     }
   ];
 
