@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { Download, Eye, X, CheckCircle, FileBadge } from "lucide-react";
 
 const INTERNSHIPS = [
   {
@@ -18,7 +20,12 @@ const INTERNSHIPS = [
       "Collaborated with engineering teams to optimize backend APIs and AI inference workflows.",
       "Contributed to prompt engineering, semantic analysis, and compliance intelligence systems."
     ],
-    technologies: ["Python", "FastAPI", "Machine Learning", "LLMs", "Agentic AI", "NLP", "Vector Databases", "REST APIs", "Docker", "Git", "Prompt Engineering"]
+    technologies: ["Python", "FastAPI", "Machine Learning", "LLMs", "Agentic AI", "NLP", "Vector Databases", "REST APIs", "Docker", "Git", "Prompt Engineering"],
+    certificate: {
+      preview: "/certificates/aparajitha-preview.webp",
+      pdf: "/certificates/aparajitha-internship.pdf",
+      title: "Internship Certificate - Aparajitha Corporate Services"
+    }
   },
   {
     company: "NoviTech R&D Pvt Ltd",
@@ -80,6 +87,105 @@ const timelineLine = {
     scaleY: 1,
     transition: { duration: 1.5, ease: "easeInOut" }
   }
+};
+
+const CertificateViewer = ({ preview, pdf, title }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <div className="mt-10 border-t border-accent/20 pt-8">
+        <div className="flex items-center gap-2 mb-6">
+          <FileBadge className="w-5 h-5 text-accent" />
+          <h4 className="text-white font-semibold text-sm uppercase tracking-wider">
+            Certificate of Completion
+          </h4>
+        </div>
+        
+        <div 
+          className="relative group rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/50 max-w-[500px] bg-white/5 backdrop-blur-md p-2 transition-all duration-300 hover:shadow-accent/20 hover:border-accent/50 cursor-pointer"
+          onClick={() => setIsOpen(true)}
+        >
+          <div className="overflow-hidden rounded-xl bg-black/40 relative">
+            <img 
+              src={preview} 
+              alt={title} 
+              loading="lazy"
+              className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 ease-out transform group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-background/90 text-accent px-4 py-2 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                <Eye className="w-4 h-4" /> Click to View
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6 max-w-[500px]">
+          <a 
+            href={pdf} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-accent/50 hover:text-accent transition-all duration-300 text-sm font-medium w-full sm:w-auto justify-center flex-1"
+            onClick={(e) => e.stopPropagation()}
+            aria-label="View Full Certificate in new tab"
+          >
+            <Eye className="w-4 h-4" /> View Certificate
+          </a>
+          
+          <a 
+            href={pdf} 
+            download
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent/10 border border-accent/20 text-accent hover:bg-accent hover:text-background transition-all duration-300 text-sm font-medium w-full sm:w-auto justify-center flex-1"
+            onClick={(e) => e.stopPropagation()}
+            aria-label="Download Certificate PDF"
+          >
+            <Download className="w-4 h-4" /> Download Certificate
+          </a>
+        </div>
+        <div className="flex items-center gap-1.5 text-accent/80 text-xs font-mono mt-4 bg-accent/5 px-3 py-1.5 rounded-full border border-accent/10 w-max">
+          <CheckCircle className="w-3.5 h-3.5" /> Verified Internship
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-md"
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.button 
+              className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full backdrop-blur-md transition-all z-50"
+              onClick={() => setIsOpen(false)}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Close modal"
+            >
+              <X className="w-6 h-6" />
+            </motion.button>
+
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-5xl w-full max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-background/50 backdrop-blur-lg flex items-center justify-center p-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={preview} 
+                alt={`${title} Full View`} 
+                className="w-full h-full object-contain rounded-xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 };
 
 export default function Experience() {
@@ -184,6 +290,14 @@ export default function Experience() {
                           </span>
                         ))}
                       </div>
+                    )}
+                    
+                    {exp.certificate && (
+                      <CertificateViewer 
+                        preview={exp.certificate.preview}
+                        pdf={exp.certificate.pdf}
+                        title={exp.certificate.title}
+                      />
                     )}
                   </div>
                 </div>
