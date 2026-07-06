@@ -8,7 +8,7 @@ const PROJECTS = [
     name: "Real-time Collaborative Text Editor",
     category: "Full Stack",
     description: "A Google Docs-style real-time collaborative editor with conflict resolution.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+    tech: ["React", "Node.js", "Socket.io", "MongoDB", "Python", "WebSockets"],
     github: "https://github.com/Sanjay-kumar465/Real-time-Collaborative-Text-Editor",
     demo: "#"
   },
@@ -17,7 +17,7 @@ const PROJECTS = [
     name: "Online Grocery Order Processing System",
     category: "Full Stack",
     description: "End-to-end grocery management system with inventory tracking and Java backend.",
-    tech: ["Java", "Spring Boot", "MySQL"],
+    tech: ["Java", "Spring Boot", "MySQL", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/Sanjay-kumar465/ONLINE-GROCERY-ORDER-PROCESSING-SYSTEM",
     demo: "#"
   },
@@ -26,7 +26,7 @@ const PROJECTS = [
     name: "ChatApp",
     category: "Full Stack",
     description: "Multi-room messaging application with user authentication and instant delivery.",
-    tech: ["React", "Node.js", "Socket.io"],
+    tech: ["React", "Node.js", "Socket.io", "Python", "Flask", "MySQL"],
     github: "https://github.com/Sanjay-kumar465/chatapp",
     demo: "#"
   },
@@ -44,7 +44,7 @@ const PROJECTS = [
     name: "FakeNewsDetection",
     category: "Backend",
     description: "Machine learning Pipeline for identifying misinformation using NLP algorithms.",
-    tech: ["Python", "ML", "NLP"],
+    tech: ["Python", "ML", "NLP", "Scikit-learn", "TF-IDF"],
     github: "https://github.com/Sanjay-kumar465/FakeNewsDetection",
     demo: "#"
   },
@@ -62,7 +62,7 @@ const PROJECTS = [
     name: "Sentiment Scope",
     category: "Frontend",
     description: "A web application for performing sentiment analysis on text data.",
-    tech: ["JavaScript", "HTML/CSS"],
+    tech: ["JavaScript", "HTML/CSS", "Python", "NLP", "Scikit-learn", "NLTK"],
     github: "https://github.com/Sanjay-kumar465/Sentiment-Scope",
     demo: "#"
   },

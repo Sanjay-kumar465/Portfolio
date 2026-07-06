@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 
 const CERTIFICATES = [
   {
+    name: "PHP and MySQL",
+    issuer: "Indian Institute of Technology, Bombay (IIT Bombay)",
+    date: "Apr 2026",
+    id: "39716449QG",
+    file: "#"
+  },
+  {
     name: "Artificial Intelligence Internship",
     issuer: "NoviTech R&D Pvt Ltd",
     date: "Aug 2025",
@@ -161,11 +168,11 @@ export default function Certifications() {
             </div>
 
             <a
-              href={`/certificates/${cert.file}`}
-              download={isIOS}
-              target="_blank"
+              href={cert.file === "#" ? "#" : `/certificates/${cert.file}`}
+              download={cert.file !== "#" ? isIOS : undefined}
+              target={cert.file !== "#" ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="mt-8 w-full min-h-[48px] py-4 bg-accent text-background font-bold uppercase tracking-widest text-xs hover:scale-[1.02] transition-all text-center flex items-center justify-center"
+              className={`mt-8 w-full min-h-[48px] py-4 font-bold uppercase tracking-widest text-xs transition-all text-center flex items-center justify-center ${cert.file === "#" ? "bg-white/10 text-white/50 cursor-not-allowed" : "bg-accent text-background hover:scale-[1.02]"}`}
             >
               {isIOS ? "Download Certificate" : "View Certificate"}
             </a>
