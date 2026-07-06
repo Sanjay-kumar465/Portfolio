@@ -94,44 +94,25 @@ const CertificateViewer = ({ preview, pdf, title }) => {
 
   return (
     <>
-      <div className="mt-10 border-t border-accent/20 pt-8">
-        <div className="flex items-center gap-2 mb-6">
+      <div className="mt-8 border-t border-accent/20 pt-6">
+        <div className="flex items-center gap-2 mb-4">
           <FileBadge className="w-5 h-5 text-accent" />
           <h4 className="text-white font-semibold text-sm uppercase tracking-wider">
             Certificate of Completion
           </h4>
         </div>
         
-        <div 
-          className="relative group rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/50 max-w-[500px] bg-white/5 backdrop-blur-md p-2 transition-all duration-300 hover:shadow-accent/20 hover:border-accent/50 cursor-pointer"
-          onClick={() => setIsOpen(true)}
-        >
-          <div className="overflow-hidden rounded-xl bg-black/40 relative">
-            <img 
-              src={preview} 
-              alt={title} 
-              loading="lazy"
-              className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 ease-out transform group-hover:scale-[1.02]"
-            />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="bg-background/90 text-accent px-4 py-2 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                <Eye className="w-4 h-4" /> Click to View
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6 max-w-[500px]">
-          <a 
-            href={pdf} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-accent/50 hover:text-accent transition-all duration-300 text-sm font-medium w-full sm:w-auto justify-center flex-1"
-            onClick={(e) => e.stopPropagation()}
-            aria-label="View Full Certificate in new tab"
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-[500px]">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(true);
+            }}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 hover:border-accent/50 hover:text-accent transition-all duration-300 text-sm font-medium w-full sm:w-auto justify-center flex-1 cursor-pointer"
+            aria-label="Preview Certificate"
           >
-            <Eye className="w-4 h-4" /> View Certificate
-          </a>
+            <Eye className="w-4 h-4" /> Preview Certificate
+          </button>
           
           <a 
             href={pdf} 
