@@ -153,13 +153,13 @@ const CertificateViewer = ({ preview, pdf, title }) => {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-5xl w-full max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-background/50 backdrop-blur-lg flex items-center justify-center p-2"
+              className="relative max-w-5xl w-full max-h-[90vh] rounded-2xl overflow-y-auto shadow-2xl border border-white/10 bg-background/90 backdrop-blur-lg p-2"
               onClick={(e) => e.stopPropagation()}
             >
               <img 
                 src={preview} 
                 alt={`${title} Full View`} 
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-auto block rounded-xl"
               />
             </motion.div>
           </motion.div>
